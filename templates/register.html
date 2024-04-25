@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row d-flex mx-auto justify-content-center w-100 h-100 my-4">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+            <div class="p-5 mt-3 text-center w-100" style="background-color: #161718">
+                <form method="post" action="{% url 'UserRegisterView' %}">
+                    {% csrf_token %}
+                    <img class="me-2" style="max-width: 50px;" src="{% static 'icons/favicon.ico' %}">
+                    <h4 class="orange my-3">Register</h4>
+                    <div class="form-outline mb-3 mx-auto w-75">
+                        <input type="text" id="email" name="email"
+                               class="form-control form-control-lg text-input"/>
+                        <label class="form-label orange" for="email">Email</label>
+                    </div>
+                    <div class="form-outline mb-3 mx-auto w-75">
+                        <input type="text" id="username" name="username"
+                               class="form-control form-control-lg text-input"/>
+                        <label class="form-label orange" for="username">Username</label>
+                    </div>
+
+                    <div class="form-outline mb-3 mx-auto w-75">
+                        <input type="password" id="password" name="password"
+                               class="form-control form-control-lg text-input"/>
+                        <label class="form-label orange" for="password">Password</label>
+                    </div>
+                    <button class="hover btn btn-md btn-dark p-2 my-2 d-inline text-nowrap orange orangeBtn" type="submit">Create Account</button>
+                </form>
+                {% if error %}
+                    <p class="text-danger">{{ error }}</p>
+                {% endif %}
+            <hr class="orange w-75 mx-auto my-5 border-5 opacity-100">
+            <span class="orange mx-auto"> Already have an account? </span>
+            <a href="/signin" class="hover btn btn-dark p-2 d-inline mx-auto"
+               id="signinBtn">Sign In</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

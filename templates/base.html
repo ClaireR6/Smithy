@@ -11,48 +11,58 @@
     <meta charset="UTF-8">
     <title>Smithy</title>
 </head>
-<body>
-<div class="align-items-center d-flex flex-nowrap me-0 mx-auto pe-0 position-fixed py-3 row w-100" id="header">
-    <div class="col-5 col-md-3 col-lg-2 justify-content-left ms-2 primary-color"><a href="/" class="link"><img style="max-width: 25px;padding-bottom: 3px"  src="{% static 'icons/favicon.ico' %}"> <span>Smithy</span> </a></div>
-    <div class="d-none d-md-block col-md-5 col-lg-6">
+<body> 
+<div class="col-12">
+<div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
+    <div class="col-4 col-md-2 col-lg-1 justify-content-left align-items-center d-flex">
+        <a href="/" class="link align-items-center d-flex flex-nowrap">
+            <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span class="d-none d-sm-flex">Smithy</span> 
+        </a>
+    </div>
+    <div class="col-auto d-md-block d-none d-flex">
+        <a href="/" class="link">Campaigns</a>
+    </div>
+    <div class="col-auto d-md-block d-none d-flex">
+        <a href="/" class="link">Characters</a>
+    </div>
+    <div class="col-auto d-md-block d-none d-flex">
+        <a href="/" class="link">Homebrew</a>
+    </div>
+    <div class="d-none d-md-block col-md-4 col-lg-5">
         <form id="searchForm">
-            <div class="input-group mx-auto w-100 border-solid border-1" id="searchbar" style="border-color:#E8DCCD">
-                <input class="col-8 form-control ps-3 rounded-start-pill" type="search" id="search" placeholder="Search"
+            <div class="input-group mx-auto w-100" id="searchbar">
+                <input class="col-8 form-control ps-3 border-none" type="search" id="search" placeholder="Search"
                        aria-label="Search" aria-describedby="basic-addon2">
-                <div class="col-2 col-lg-2 col-xl-1 input-group-append border-solid border-1">
-                    <div class="dropdown w-100">
-                        <button class="btn pe-3 w-100 dropdown-toggle" id="filterBtn" type="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
-                                onclick="this.dropdown('toggle')"><i
-                                class="fa fa-filter"></i>
-                        </button>
-                        <div class="form-group dropdown-menu p-2" aria-labelledby="filterBtn"
-                             style="background-color: #e3d7c9;">
-                            <h6>Filter By</h6>
-                            <input type="checkbox" class="form-check-input check" id="byProduct" name="name"
-                                   value="productFilter">
-                            <label for="byProduct"> Product Name</label> <br>
-                            <input type="checkbox" class="form-check-input check" id="byStore" name="store"
-                                   value="storeFilter">
-                            <label for="byStore"> Store Name </label> <br>
-                            <input type="checkbox" class="form-check-input check" id="byCategory" name="category"
-                                   value="categoryFilter">
-                            <label for="byCategory"> Category </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2 col-lg-1 input-group-append border-solid border-1">
-                    <button class="btn w-100 rounded-end-pill pe-3" type="submit" id="searchBtn">
+                <div class="col-2 col-lg-1 input-group-append">
+                    <button class="btn w-100 pe-3" type="submit" id="searchBtn">
                         <i class="fa fa-search"></i>
                     </button>
                 </div>
             </div>
         </form>
     </div>
+    {% if user.is_authenticated %}
+        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex ms-auto">
+        <a href="/signout" class="hover btn btn-dark p-2 d-inline me-1 pe-3"
+               id="signoutBtn">Sign Out</a>
+        </div>
+    {% else %}
+        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex justify-content-end ms-auto">
+            <a href="/register" class="hover btn btn-dark p-2 d-inline"
+               id="registerBtn">Register</a>
+        </div>
+        <div class="vr d-none d-sm-flex" style="color: #ff5519; opacity:100%; padding:2px"></div>
+        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex m-0">
+            <a href="/signin" class="hover btn btn-dark p-2 d-inline text-nowrap"
+               id="signinBtn">Sign In</a>
+        </div>
+    {% endif %}
+
 </div>
-<div class="d-flex pt-5" id="main">
+<div class="d-flex m-0 mt-5" id="main">
     {% block content %}
     {% endblock %}
+</div>
 </div>
 </body>
 </html>

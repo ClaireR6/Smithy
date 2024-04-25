@@ -21,4 +21,6 @@ from BackendWork.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
+    path('signin/', UserSignInView.as_view(), name='UserSignInView'),
+    path('register/', UserRegisterView.as_view(), name='UserRegisterView'),
 ]

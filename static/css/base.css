@@ -1,59 +1,95 @@
 html, body {
     height: 100%;
     width: 100%;
+    right:0;
+    left:0;
 }
 
+.text-input{
+}
 
 #main {
-    background: #212529;
-    margin: 0;
+    width:100%;
     left: 0;
     right: 0;
 }
-#main {
-    transition: margin-left 0.2s ease;
-}
 
-@media screen and (min-width: 768px) {
-    #main {
-        margin-left: 200px;
-    }
-}
 #header {
     z-index: 3;
     top: 0;
-    max-height: 55px;
+    max-height: 100px;
     background-color: #161718;
+    border-bottom: #ff5519 5px solid;
+}
+
+.orange {
+    color: #ff5519;
 }
 
 #searchBtn {
-    color: #e3d7c9;
-    border-color: #e3d7c9;
-    background: #212529;
+    border-radius: 0 3px 3px 0;
+    color: #212529;
+    background: #363637;
+    height: 40px;
 }
 
 #searchBtn:hover {
-    background-color: #e3d7c9;
-    color: #2C2C2C;
-    border-color: #e3d7c9;
-}
-
-
-#search {
-    color: #e3d7c9;
-    background: #212529;
-}
-
-#search::placeholder {
-    color: #e3d7c9;
+    color: #ff5519;
     opacity: 70%;
 }
 
 
+#search {
+    border-radius: 3px 0 0 3px;
+    border: none;
+    color: #212529;
+    background: #363637;
+    font-size: 18px;
+    height: 40px;
+}
+
+#search::placeholder {
+    color: #4e4e4e;
+}
+
+#signinBtn, #registerBtn {
+    background: transparent;
+    border-radius: 0;
+}
+
+.orangeBtn:hover{
+    background-color: #ff5519;
+    color: #161718;
+}
+
+#registerBtn:hover {
+    background-color: #ff5519;
+    color: #161718;
+}
+
+#registerBtn {
+    background-color: #161718;
+    color: #ff5519;
+}
+
+#signinBtn {
+    border: #ff5519 2px solid;
+    border-radius: 3px;
+}
+
+#signinBtn:hover {
+    background-color: #ff5519;
+    color: #161718;
+}
+
+
 .link {
-    color: #e3d7c9;
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    color: white;
+    font-weight:bold;
     text-decoration: none;
+}
+
+
+.red {
+    background-color: red
 }
