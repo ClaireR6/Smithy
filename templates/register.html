@@ -3,8 +3,11 @@
 {% block content %}
     <div class="row d-flex mx-auto justify-content-center w-100 h-100 my-4">
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+        <div class="row toast w-100" id="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3000">
+                <div class="toast-body text-center text-white"></div>
+            </div>
             <div class="p-5 mt-3 text-center w-100" style="background-color: #161718">
-                <form method="post" action="{% url 'UserRegisterView' %}">
+                <form method="post" id="registrationForm">
                     {% csrf_token %}
                     <img class="me-2" style="max-width: 50px;" src="{% static 'icons/favicon.ico' %}">
                     <h4 class="orange my-3">Register</h4>
@@ -20,9 +23,14 @@
                     </div>
 
                     <div class="form-outline mb-3 mx-auto w-75">
-                        <input type="password" id="password" name="password"
+                        <input type="password" id="password1" name="password1"
                                class="form-control form-control-lg text-input"/>
-                        <label class="form-label orange" for="password">Password</label>
+                        <label class="form-label orange" for="password1">Password</label>
+                    </div>
+                    <div class="form-outline mb-3 mx-auto w-75">
+                        <input type="password" id="password2" name="password2"
+                               class="form-control form-control-lg text-input"/>
+                        <label class="form-label orange" for="password2">Confirm Password</label>
                     </div>
                     <button class="hover btn btn-md btn-dark p-2 my-2 d-inline text-nowrap orange orangeBtn" type="submit">Create Account</button>
                 </form>
@@ -36,4 +44,5 @@
             </div>
         </div>
     </div>
+    <script src="{% static 'js/register.js' %}"></script>
 {% endblock %}

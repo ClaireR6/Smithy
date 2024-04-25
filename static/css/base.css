@@ -62,6 +62,11 @@ html, body {
     color: #161718;
 }
 
+.orangeBtn{
+    border: #ff5519 2px solid;
+    border-radius: 3px;
+}
+
 #registerBtn:hover {
     background-color: #ff5519;
     color: #161718;

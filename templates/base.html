@@ -11,12 +11,12 @@
     <meta charset="UTF-8">
     <title>Smithy</title>
 </head>
-<body> 
+<body>
 <div class="col-12">
 <div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
     <div class="col-4 col-md-2 col-lg-1 justify-content-left align-items-center d-flex">
         <a href="/" class="link align-items-center d-flex flex-nowrap">
-            <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span class="d-none d-sm-flex">Smithy</span> 
+            <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span class="d-none d-sm-flex">Smithy</span>
         </a>
     </div>
     <div class="col-auto d-md-block d-none d-flex">
@@ -43,7 +43,7 @@
     </div>
     {% if user.is_authenticated %}
         <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex ms-auto">
-        <a href="/signout" class="hover btn btn-dark p-2 d-inline me-1 pe-3"
+        <a href="/signout" class="hover btn btn-dark p-2 d-inline text-center me-1 orangeBtn"
                id="signoutBtn">Sign Out</a>
         </div>
     {% else %}
