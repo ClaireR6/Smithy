@@ -98,9 +98,40 @@ html, body {
 }
 
 .link:hover {
-    color: lightgray;
+    color: #bdbdbd;
 }
 
 .red {
     background-color: red
+}
+
+.green {
+    color: #14a763;
+}
+
+.greenBtn{
+    border: #14a763 2px solid;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.greenBtn:hover{
+    background-color: #14a763;
+    color: #161718;
+}
+
+
+.yellow {
+    color: #ffe400;
+}
+
+.yellowBtn{
+    border: #ffe400 2px solid;
+    border-radius: 3px;
+    background-color: transparent;
+}
+
+.yellowBtn:hover{
+    background-color: #ffe400;
+    color: #161718;
 }
