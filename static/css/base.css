@@ -3,6 +3,8 @@ html, body {
     width: 100%;
     right:0;
     left:0;
+    background-color: #363637;
+;
 }
 
 .text-input{
@@ -65,6 +67,7 @@ html, body {
 .orangeBtn{
     border: #ff5519 2px solid;
     border-radius: 3px;
+    background-color: transparent;
 }
 
 #registerBtn:hover {
@@ -94,6 +97,9 @@ html, body {
     text-decoration: none;
 }
 
+.link:hover {
+    color: lightgray;
+}
 
 .red {
     background-color: red

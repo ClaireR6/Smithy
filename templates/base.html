@@ -13,56 +13,65 @@
 </head>
 <body>
 <div class="col-12">
-<div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
-    <div class="col-4 col-md-2 col-lg-1 justify-content-left align-items-center d-flex">
-        <a href="/" class="link align-items-center d-flex flex-nowrap">
-            <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span class="d-none d-sm-flex">Smithy</span>
-        </a>
-    </div>
-    <div class="col-auto d-md-block d-none d-flex">
-        <a href="/" class="link">Campaigns</a>
-    </div>
-    <div class="col-auto d-md-block d-none d-flex">
-        <a href="/" class="link">Characters</a>
-    </div>
-    <div class="col-auto d-md-block d-none d-flex">
-        <a href="/" class="link">Homebrew</a>
-    </div>
-    <div class="d-none d-md-block col-md-4 col-lg-5">
-        <form id="searchForm">
-            <div class="input-group mx-auto w-100" id="searchbar">
-                <input class="col-8 form-control ps-3 border-none" type="search" id="search" placeholder="Search"
-                       aria-label="Search" aria-describedby="basic-addon2">
-                <div class="col-2 col-lg-1 input-group-append">
-                    <button class="btn w-100 pe-3" type="submit" id="searchBtn">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
+    <div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
+        <div class="col-md-auto col-lg-1 col-sm-2 col-1 justify-content-left align-items-center d-flex">
+            <a href="/" class="link align-items-center d-flex flex-nowrap">
+                <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span
+                    class="d-none d-sm-flex">Smithy</span>
+            </a>
+        </div>
+        <div class="col-1 dropdown d-md-none me-sm-0  me-auto">
+            <button class="btn pe-3 w-100 dropdown-toggle" id="dropdownBtn" type="button"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                onclick="this.dropdown('toggle')"><i
+                                class="fa fa-bars" style="color:white"></i>
+                        </button>
+            <div class="dropdown-menu" style="background-color:#161718" aria-labelledby="dropdownBtn">
+                <a href="/" class="link dropdown-item">Campaigns</a>
+                <a href="/" class="link dropdown-item">Characters</a>
+                <a href="/" class="link dropdown-item">Homebrew</a>
             </div>
-        </form>
-    </div>
-    {% if user.is_authenticated %}
-        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex ms-auto">
-        <a href="/signout" class="hover btn btn-dark p-2 d-inline text-center me-1 orangeBtn"
-               id="signoutBtn">Sign Out</a>
         </div>
-    {% else %}
-        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex justify-content-end ms-auto">
-            <a href="/register" class="hover btn btn-dark p-2 d-inline"
-               id="registerBtn">Register</a>
+        <div class="col-auto d-md-block d-none d-flex">
+            <a href="/" class="link">Campaigns</a>
         </div>
-        <div class="vr d-none d-sm-flex" style="color: #ff5519; opacity:100%; padding:2px"></div>
-        <div class="col-lg-1 col-md-1 col-6 d-none d-sm-flex m-0">
-            <a href="/signin" class="hover btn btn-dark p-2 d-inline text-nowrap"
-               id="signinBtn">Sign In</a>
+        <div class="col-auto d-md-block d-none d-flex">
+            <a href="/" class="link">Characters</a>
         </div>
-    {% endif %}
+        <div class="col-auto d-md-block d-none d-flex">
+            <a href="/" class="link">Homebrew</a>
+        </div>
+        <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-5">
+            <form id="searchForm">
+                <div class="input-group mx-auto w-100" id="searchbar">
+                    <input class="col-8 form-control ps-3 border-none" type="search" id="search" placeholder="Search"
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="col-2 col-lg-1 input-group-append">
+                        <button class="btn w-100 pe-3" type="submit" id="searchBtn">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-6 d-flex flex-row me-auto">
+            {% if user.is_authenticated %}
+                <a href="/signout" class="hover btn btn-dark p-2 mx-3 d-inline text-center me-1 orangeBtn"
+                   id="signoutBtn">Sign Out</a>
+            {% else %}
 
-</div>
-<div class="d-flex m-0 mt-5" id="main">
-    {% block content %}
-    {% endblock %}
-</div>
+                <a href="/register" class="hover btn btn-dark p-2 mx-3 d-inline"
+                   id="registerBtn">Register</a>
+                <div class="vr d-none d-sm-flex" style="color: #ff5519; opacity:100%; padding:2px"></div>
+                <a href="/signin" class="hover btn btn-dark p-2 mx-3 d-inline text-nowrap"
+                   id="signinBtn">Sign In</a>
+            {% endif %}
+        </div>
+    </div>
+    <div class="d-flex m-0 mt-5" id="main">
+        {% block content %}
+        {% endblock %}
+    </div>
 </div>
 </body>
 </html>
