@@ -10,6 +10,10 @@ class User(AbstractUser):
 
 
 class Proficiency(models.Model):
+    profId = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20, unique=True)
+    type = models.CharField(max_length=20)
+
     ARMOR_CHOICES = (
         ('light', 'Light Armor'),
         ('medium', 'Medium Armor'),
@@ -76,10 +80,6 @@ class Proficiency(models.Model):
         ('instrument', 'Instrument'),
     )
 
-    profId = models.AutoField(primary_key=True)
-    type = models.CharField(max_length=10, choices=PROFICIENCY_TYPES)
-    subtype = models.CharField(max_length=20, choices=(), blank=True)
-
     def save(self, *args, **kwargs):
         if self.type == 'armor':
             self.subtype = models.CharField(max_length=10, choices=self.ARMOR_CHOICES)
@@ -96,6 +96,8 @@ class Proficiency(models.Model):
 
         super().save(*args, **kwargs)
 
+    def __str__(self):
+        return self.name
 
 class Spell:
     pass
@@ -109,8 +111,10 @@ class CharacterClass(models.Model):
     classId = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20, unique=True)
     spellcasting_ability = models.CharField(max_length=20, null=True, blank=True)
-    spells = models.ManyToManyField(Spell, blank=True)
-    features = models.ManyToManyField(Feat, blank=True)
+    subclassAtLevel = models.IntegerField()
+
+    # spells = models.ManyToManyField(Spell, blank=True)
+    # features = models.ManyToManyField(Feat, blank=True)
 
     def is_spellcaster(self):
         return self.spellcasting_ability is not None
@@ -118,15 +122,23 @@ class CharacterClass(models.Model):
     def available_spells(self):
         return self.spells.all() if self.is_spellcaster() else None
 
+    def __str__(self):
+        return self.name
+
+
 class CharacterSubclass(models.Model):
     subclassId = models.AutoField(primary_key=True)
-    superClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE)
+    superClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE, related_name='characterSubclass')
     name = models.CharField(max_length=20, unique=True)
+
+    def __str__(self):
+        return self.name
+
 
 class Character(models.Model):
     characterId = models.AutoField(primary_key=True)
-    owner = models.ForeignKey(user=User, on_delete=models.CASCADE)
-    # campaign = models.ForeignKey(campaign=Campaign, on_delete=models.CASCADE)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='characters')
+    # campaign = models.ForeignKey(campaign=Campaign, on_delete=models.CASCADE, related_name='characters')
     name = models.CharField(max_length=20)
     totalLevel = models.IntegerField()
     dex = models.IntegerField()
@@ -142,17 +154,17 @@ class Character(models.Model):
     proficiencies = models.ManyToManyField(Proficiency)
 
     def get_attr_mod(self, attr):
-        if attr is 'dex':
+        if attr == 'dex':
             return int(floor(self.dex / 2))
-        if attr is 'str':
+        if attr == 'str':
             return int(floor(self.str / 2))
-        if attr is 'con':
+        if attr == 'con':
             return int(floor(self.con / 2))
-        if attr is 'wis':
+        if attr == 'wis':
             return int(floor(self.wis / 2))
-        if attr is 'int':
+        if attr == 'int':
             return int(floor(self.int / 2))
-        if attr is 'cha':
+        if attr == 'cha':
             return int(floor(self.cha / 2))
 
     @property
@@ -168,9 +180,19 @@ class Character(models.Model):
         else:
             return 6
 
+    def __str__(self):
+        return self.name
 
 class ClassLevel(models.Model):
     classLvlId = models.AutoField(primary_key=True)
-    charClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE)
+    charClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE, related_name='classLevel')
+    charSubclass = models.ForeignKey(CharacterSubclass, on_delete=models.CASCADE, related_name='classLevel', blank=True,
+                                     null=True)
     level = models.IntegerField(default=1)
-    character = models.ForeignKey(Character, on_delete=models.CASCADE)
+    character = models.ForeignKey(Character, on_delete=models.CASCADE, related_name='classLevel')
+
+    def __str__(self):
+        if self.charSubclass is not None:
+            return f"{self.charClass} {self.charSubclass} {self.level} {self.character}"
+        else:
+            return f"{self.charClass} {self.character}"
