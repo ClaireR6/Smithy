@@ -1,0 +1,115 @@
+[
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 1,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Artificer",
+            "spellcasting_ability" : "int"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 2,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Barbarian"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 3,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Bard",
+            "spellcasting_ability" : "cha"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 4,
+        "fields": {
+            "subclassAtLevel": 1,
+            "name": "Cleric",
+            "spellcasting_ability" : "wis"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 5,
+        "fields": {
+            "subclassAtLevel": 2,
+            "name": "Druid",
+            "spellcasting_ability" : "wis"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 6,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Fighter"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 7,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Monk"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 8,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Paladin",
+            "spellcasting_ability" : "cha"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 9,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Ranger",
+            "spellcasting_ability" : "wis"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 10,
+        "fields": {
+            "subclassAtLevel": 3,
+            "name": "Rogue"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 11,
+        "fields": {
+            "subclassAtLevel": 1,
+            "name": "Sorcerer",
+            "spellcasting_ability" : "cha"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 12,
+        "fields": {
+            "subclassAtLevel": 1,
+            "name": "Warlock",
+            "spellcasting_ability" : "cha"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterClass",
+        "pk": 13,
+        "fields": {
+            "subclassAtLevel": 2,
+            "name": "Wizard",
+            "spellcasting_ability" : "int"
+        }
+    }
+]

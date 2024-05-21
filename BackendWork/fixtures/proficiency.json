@@ -1,0 +1,307 @@
+[
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 1,
+        "fields": {
+            "name": "Light Armor",
+            "type" : "armor"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 2,
+        "fields": {
+            "name": "Medium Armor",
+            "type" : "armor"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 3,
+        "fields": {
+            "name": "Heavy Armor",
+            "type" : "armor"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 4,
+        "fields": {
+            "name": "Shield",
+            "type" : "armor"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 5,
+        "fields": {
+            "name": "Simple",
+            "type" : "weapon"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 6,
+        "fields": {
+            "name": "Martial",
+            "type" : "weapon"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 7,
+        "fields": {
+            "name": "Artisan's Tools",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 8,
+        "fields": {
+            "name": "Disguise Kit",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 9,
+        "fields": {
+            "name": "Forgery Kit",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 10,
+        "fields": {
+            "name": "Gaming Set",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 11,
+        "fields": {
+            "name": "Herbalism Kit",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 12,
+        "fields": {
+            "name": "Navigator's Tools",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 13,
+        "fields": {
+            "name": "Poisoner's Kit",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 14,
+        "fields": {
+            "name": "Thieves' Tools",
+            "type" : "tool"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 15,
+        "fields": {
+            "name": "Strength",
+            "type" : "saving throw"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 16,
+        "fields": {
+            "name": "Dexterity",
+            "type" : "saving throw"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 17,
+        "fields": {
+            "name": "Constitution",
+            "type" : "saving throw"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 18,
+        "fields": {
+            "name": "Wisdom",
+            "type" : "saving throw"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 19,
+        "fields": {
+            "name": "Intelligence",
+            "type" : "saving throw"
+        }
+    },
+
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 20,
+        "fields": {
+            "name": "Charisma",
+            "type" : "saving throw"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 21,
+        "fields": {
+            "name": "Acrobatics",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 22,
+        "fields": {
+            "name": "Animal Handling",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 23,
+        "fields": {
+            "name": "Arcana",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 24,
+        "fields": {
+            "name": "Athletics",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 25,
+        "fields": {
+            "name": "Deception",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 26,
+        "fields": {
+            "name": "History",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 27,
+        "fields": {
+            "name": "Insight",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 28,
+        "fields": {
+            "name": "Intimidation",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 29,
+        "fields": {
+            "name": "Investigation",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 30,
+        "fields": {
+            "name": "Medicine",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 31,
+        "fields": {
+            "name": "Nature",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 32,
+        "fields": {
+            "name": "Perception",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 33,
+        "fields": {
+            "name": "Performance",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 34,
+        "fields": {
+            "name": "Persuasion",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 35,
+        "fields": {
+            "name": "Religion",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 36,
+        "fields": {
+            "name": "Sleight of Hand",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 37,
+        "fields": {
+            "name": "Stealth",
+            "type" : "skill"
+        }
+    },
+    {
+        "model": "BackendWork.Proficiency",
+        "pk": 38,
+        "fields": {
+            "name": "Survival",
+            "type" : "skill"
+        }
+    }
+]

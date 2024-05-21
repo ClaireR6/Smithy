@@ -1,0 +1,5 @@
+.collapseBtn:focus, .collapseBtn:hover{
+    border: none;
+    outline: none;
+    color: #ffe400;
+}

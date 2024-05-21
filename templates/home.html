@@ -1,10 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row d-flex flex-row mx-auto w-100 my-5" style="min-height: 500px">
+    <div class="col-12 position-absolute" style="z-index: 0">
+        <img src="{% static 'images/d20.png' %}" style="rotation: 45deg; width:100%;object-fit: scale-down;aspect-ratio: 1/1;max-height: 200px;">
+        
+        <img class="ps-5 my-5" src="{% static 'images/d4.png' %}" style="rotation: 165deg;object-fit: scale-down;aspect-ratio: 1/1;max-height: 125px;">
+    </div>
+    <div class="col-lg-6 col-md-6 ms-md-auto z-1" style="opacity:90%">
+        {% if user.is_authenticated %}
+            <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
+            <span class="yellow">For the Players</span>
+            <h3 class="yellow mb-5">Your Characters</h3>
+                {% for c in user.get_characters %}
+                    <a href="{% url 'builder_base' c.characterId %}" style="color: #bdbdbd; min-height: 5rem; display: inline-block">{{ c.name }}</a> <br>
+                {% endfor %}
+                {% if not user.get_characters %}
+                    <span style="color: #bdbdbd; min-height: 5rem; display: inline-block">You do not have any characters</span>
+                {% endif %}
+            <hr class="my-5 yellow border-5 opacity-100">
+            <a href="/create_character" class="btn yellow yellowBtn" style="text-decoration: none">Create Character</a>
+            </div>
+        {% else %}
+            <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
+            <span class="yellow">For the Players</span>
+            <h3 class="yellow mb-5">Character Creation</h3>
+            <span style="color: #bdbdbd; min-height: 5rem; display: inline-block">A step by step process for creating whatever character your heart desires. Full race and class information right at your fingertips. We'll do all of the calculations so you don't have to.</span>
+            <hr class="my-5 yellow border-5 opacity-100">
+            <a href="/characterinfo" class="btn yellow yellowBtn" style="text-decoration: none">Learn More</a>
+            </div>
+        {% endif %}
+    </div>
+    <div class="col-lg-6 col-md-6 me-md-auto z-1" style="opacity:90%">
+        {% if user.is_authenticated %}
+            <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
+            <span class="green">For the Game Masters</span>
+            <div class="mb-5"><h3 class="green">Your Campaigns</h3></div>
+                {% for c in campaigns %}
+                {% endfor %}
+                {% if not campaigns %}
+                    <span style="color: #bdbdbd; min-height: 5rem; display: inline-block">You do not have any campaigns</span>
+                {% endif %}
+            <hr class="my-5 green border-5 opacity-100">
+            <a href="/createcampaign" class="btn greenBtn green" style="text-decoration: none">Create Campaign</a>
+            </div>
+        {% else %}
+            <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
+            <span class="green">For the Game Masters</span>
+            <h3 class="green mb-5">Campaign Management</h3>
+            <span style="color: #bdbdbd; min-height: 5rem; display: inline-block">Create and manage your own campaign. Invite players, manage characters, view notes, watch rolls, and more! Your one stop shop for all your game master needs.</span>
+            <hr class="my-5 green border-5 opacity-100">
+            <a href="/campaigninfo" class="btn greenBtn green" style="text-decoration: none">Learn More</a>
+            </div>
+        {% endif %}
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,850 @@
+[
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 1,
+        "fields": {
+            "superClass": 1,
+            "name" : "Alchemist"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 2,
+        "fields": {
+            "superClass": 1,
+            "name" : "Armorer"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 3,
+        "fields": {
+            "superClass": 1,
+            "name" : "Artillerist"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 4,
+        "fields": {
+            "superClass": 1,
+            "name" : "Battle Smith"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 5,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Ancestral Guardian"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 6,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Battlerager"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 7,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Beast"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 8,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Berserker"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 9,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Storm Herald"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 10,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Totem Warrior"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 11,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Path of the Zealot"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 12,
+        "fields": {
+            "superClass": 2,
+            "name" : "Path of the Wild Magic"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 13,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Creation"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 14,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Eloquence"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 15,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Glamour"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 16,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Lore"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 17,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Swords"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 18,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Valor"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 19,
+        "fields": {
+            "superClass": 3,
+            "name" : "College of Whispers"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 20,
+        "fields": {
+            "superClass": 4,
+            "name" : "Arcana Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 21,
+        "fields": {
+            "superClass": 4,
+            "name" : "Forge Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 22,
+        "fields": {
+            "superClass": 4,
+            "name" : "Grave Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 23,
+        "fields": {
+            "superClass": 4,
+            "name" : "Knowledge Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 24,
+        "fields": {
+            "superClass": 4,
+            "name" : "Life Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 25,
+        "fields": {
+            "superClass": 4,
+            "name" : "Light Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 26,
+        "fields": {
+            "superClass": 4,
+            "name" : "Nature Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 27,
+        "fields": {
+            "superClass": 4,
+            "name" : "Order Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 28,
+        "fields": {
+            "superClass": 4,
+            "name" : "Peace Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 29,
+        "fields": {
+            "superClass": 4,
+            "name" : "Tempest Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 30,
+        "fields": {
+            "superClass": 4,
+            "name" : "Trickery Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 31,
+        "fields": {
+            "superClass": 4,
+            "name" : "Twilight Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 32,
+        "fields": {
+            "superClass": 4,
+            "name" : "War Domain"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 33,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of Dreams"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 34,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of Spores"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 35,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of Stars"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 36,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of the Land"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 37,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of the Moon"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 38,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of the Shepherd"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 39,
+        "fields": {
+            "superClass": 5,
+            "name" : "Circle of Wildfire"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 40,
+        "fields": {
+            "superClass": 6,
+            "name" : "Arcane Archer"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 41,
+        "fields": {
+            "superClass": 6,
+            "name" : "Battle Master"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 42,
+        "fields": {
+            "superClass": 6,
+            "name" : "Cavalier"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 43,
+        "fields": {
+            "superClass": 6,
+            "name" : "Champion"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 44,
+        "fields": {
+            "superClass": 6,
+            "name" : "Eldritch Knight"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 45,
+        "fields": {
+            "superClass": 6,
+            "name" : "Psi Warrior"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 46,
+        "fields": {
+            "superClass": 6,
+            "name" : "Purple Dragon Knight"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 47,
+        "fields": {
+            "superClass": 6,
+            "name" : "Rune Knight"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 48,
+        "fields": {
+            "superClass": 6,
+            "name" : "Samurai"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 49,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of Mercy"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 50,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of Shadow"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 51,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Astral Self"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 52,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Drunken Master"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 53,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Four Elements"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 54,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Kensei"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 55,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Long Death"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 56,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Open Hand"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 57,
+        "fields": {
+            "superClass": 7,
+            "name" : "Way of the Sun Soul"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 58,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of Conquest"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 59,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of Devotion"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 60,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of Glory"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 61,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of Redemption"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 62,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of the Ancients"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 63,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of the Crown"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 64,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of the Watchers"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 65,
+        "fields": {
+            "superClass": 8,
+            "name" : "Oath of Vengeance"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 66,
+        "fields": {
+            "superClass": 9,
+            "name" : "Beast Master"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 67,
+        "fields": {
+            "superClass": 9,
+            "name" : "Fey Wanderer"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 68,
+        "fields": {
+            "superClass": 9,
+            "name" : "Gloom Stalker"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 69,
+        "fields": {
+            "superClass": 9,
+            "name" : "Horizon Walker"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 70,
+        "fields": {
+            "superClass": 9,
+            "name" : "Hunter"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 71,
+        "fields": {
+            "superClass": 9,
+            "name" : "Monster Slayer"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 72,
+        "fields": {
+            "superClass": 9,
+            "name" : "Swarmkeeper"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 73,
+        "fields": {
+            "superClass": 10,
+            "name" : "Assassin"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 74,
+        "fields": {
+            "superClass": 10,
+            "name" : "Inquisitive"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 75,
+        "fields": {
+            "superClass": 10,
+            "name" : "Mastermind"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 76,
+        "fields": {
+            "superClass": 10,
+            "name" : "Phantom"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 77,
+        "fields": {
+            "superClass": 10,
+            "name" : "Scout"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 78,
+        "fields": {
+            "superClass": 10,
+            "name" : "Soulknife"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 79,
+        "fields": {
+            "superClass": 10,
+            "name" : "Swashbuckler"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 80,
+        "fields": {
+            "superClass": 10,
+            "name" : "Thief"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 81,
+        "fields": {
+            "superClass": 11,
+            "name" : "Aberrant Mind"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 82,
+        "fields": {
+            "superClass": 11,
+            "name" : "Clockwork Soul"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 83,
+        "fields": {
+            "superClass": 11,
+            "name" : "Divine Soul"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 84,
+        "fields": {
+            "superClass": 11,
+            "name" : "Draconic Bloodline"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 85,
+        "fields": {
+            "superClass": 11,
+            "name" : "Shadow Magic"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 86,
+        "fields": {
+            "superClass": 11,
+            "name" : "Storm Sorcery"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 87,
+        "fields": {
+            "superClass": 11,
+            "name" : "Wild Magic"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 88,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Archfey"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 89,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Celestial"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 90,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Fathomless"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 91,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Fiend"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 92,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Genie"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 93,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Great Old One"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 94,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Hexblade"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 95,
+        "fields": {
+            "superClass": 12,
+            "name" : "The Undying"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 96,
+        "fields": {
+            "superClass": 13,
+            "name" : "Bladesinging"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 97,
+        "fields": {
+            "superClass": 13,
+            "name" : "Order of Scribes"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 98,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Abjuration"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 99,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Conjuration"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 100,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Divination"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 101,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Enchantment"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 102,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Evocation"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 103,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Illusion"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 104,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Necromancy"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 105,
+        "fields": {
+            "superClass": 13,
+            "name" : "School of Transmutation"
+        }
+    },
+    {
+        "model": "BackendWork.CharacterSubclass",
+        "pk": 106,
+        "fields": {
+            "superClass": 13,
+            "name" : "War Magic"
+        }
+    }
+]

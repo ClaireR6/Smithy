@@ -1,0 +1,24 @@
+{% load static %}
+<div class="d-flex flex-column p-3 m-2 overflow-y-auto">
+    <h3 class="yellow">Choose your character's class</h3>
+    <hr class="my-3 yellow border-5 opacity-100">
+    <select id="classSelect" class="form-select form-select-lg mb-3" aria-label="select"
+            onfocus="if(this.options.length>5){this.size=5;}" onblur="this.removeAttribute('size')"
+            onchange="this.blur()">
+        <option value="unselected">Choose a Class</option>
+        {% for c in classes %}
+            <option value="{{ c.classId }}">{{ c.name }}</option>
+        {% endfor %}
+    </select>
+    <div id="classInfo" class="text-start">
+        
+    </div>
+</div>
+<div class="d-flex m-3 mt-auto h-100">
+    <a href="{% url 'builder_race' character.characterId %}" class="btn yellow yellowBtn me-auto"><i
+            class="fa fa-lg fa-solid fa-left-long mx-auto w-100 h-100"></i></a>
+    <a href="{% url 'builder_race' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
+            class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
+</div>
+<link rel="stylesheet" type="text/css" href="{% static 'css/builder_class.css' %}">
+<script src="{% static 'js/class.js' %}" defer data-characterId="{{ character.characterId }}"></script>

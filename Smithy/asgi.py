@@ -1,5 +1,5 @@
 """
-ASGI config for CharacterCreator project.
+ASGI config for Smithy project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CharacterCreator.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Smithy.settings')
 
 application = get_asgi_application()

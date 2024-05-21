@@ -1,0 +1,20 @@
+{% load static %}
+<div class="d-flex flex-column p-3 m-2 overflow-y-auto">
+    <h3 class="yellow">Choose your character's race</h3>
+    <hr class="my-3 yellow border-5 opacity-100">
+    <select id="raceSelect" class="form-select form-select-lg mb-3" aria-label="select"
+            onfocus="if(this.options.length>5){this.size=5;}" onblur="this.removeAttribute('size')"
+            onchange="this.blur()">
+        <option value="unselected">Choose a Race</option>
+        {% for r in races %}
+            <option value="{{ r.raceId }}">{{ r.raceName }}</option>
+        {% endfor %}
+    </select>
+    <div id="raceInfo" class="text-start">
+    </div>
+</div>
+<div class="d-flex m-3 mt-auto h-100">
+    <a href="{% url 'builder_class' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
+            class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
+</div>
+<script src="{% static 'js/race.js' %}"></script>

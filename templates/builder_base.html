@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="row d-flex flex-row mx-auto w-100 my-4 position-absolute" style="min-height: 500px">
+        <div class="col-12 position-absolute" style="z-index: 0">
+            <img src="{% static 'images/d20.png' %}"
+                 style="rotation: 45deg; width:100%;object-fit: scale-down;aspect-ratio: 1/1;max-height: 200px;">
+
+            <img class="ps-5 my-5" src="{% static 'images/d4.png' %}"
+                 style="rotation: 165deg;object-fit: scale-down;aspect-ratio: 1/1;max-height: 125px;">
+        </div>
+    </div>
+    <div class="row d-flex flex-row flex-grow-1 mx-auto w-100 my-4" style="height: 100vh">
+        <div class="col-lg-2 col-md-2 z-1 corner-border" style="opacity:90%;">
+            <div class="pt-5 mt-3 text-center w-100"
+                 style="background-color: #262728; min-height:90%; box-shadow: 10px 5px 5px;">
+                <h3 class="mb-5 greyText">{{ character.name }}</h3>
+                <span class="d-inline-block greyText">{% if character.race %} {{ character.race }} {% else %} No
+                    Race {% endif %}</span> <br>
+                {% for class in character.classLevel.all %}
+                    <span class="d-inline-block greyText"> {{ class }} </span> <br>
+                {% endfor %}
+
+                {% if not character.classLevel.all %}
+                    <span class="d-inline-block greyText"> No Class </span> <br>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-lg-1 col-md-1"></div>
+        <div class="col-lg-6 col-md-6 z-1" style="opacity:90%">
+            <div class="p-2 mt-3 text-center w-100 d-flex flex-column" style="background-color: #161718; min-height:90%;">
+                {% include link  %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
