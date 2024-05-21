@@ -8,6 +8,9 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     friends = models.ManyToManyField('self', blank=True)
 
+    def get_characters(self):
+        return Character.objects.filter(owner=self)
+
 
 class Proficiency(models.Model):
     profId = models.AutoField(primary_key=True)
@@ -99,13 +102,40 @@ class Proficiency(models.Model):
     def __str__(self):
         return self.name
 
-class Spell:
+
+class Spell(models.Model):
     pass
 
 
-class Feat:
-    pass
+class Feature(models.Model):
+    featId = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=500)
+    levelReq = models.IntegerField()
 
+    def __str__(self):
+        return self.name
+
+
+class Language(models.Model):
+    languageId = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+
+
+class Trait(models.Model):
+    traitId = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=200)
+
+
+class Race(models.Model):
+    raceId = models.AutoField(primary_key=True)
+    raceName = models.CharField(max_length=20)
+    speed = models.PositiveIntegerField()
+    traits = models.ManyToManyField(Trait)
+
+    def __str__(self):
+        return self.raceName
 
 class CharacterClass(models.Model):
     classId = models.AutoField(primary_key=True)
@@ -114,7 +144,7 @@ class CharacterClass(models.Model):
     subclassAtLevel = models.IntegerField()
 
     # spells = models.ManyToManyField(Spell, blank=True)
-    # features = models.ManyToManyField(Feat, blank=True)
+    features = models.ManyToManyField(Feature, blank=True)
 
     def is_spellcaster(self):
         return self.spellcasting_ability is not None
@@ -137,19 +167,20 @@ class CharacterSubclass(models.Model):
 
 class Character(models.Model):
     characterId = models.AutoField(primary_key=True)
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='characters')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='character')
+    race = models.ForeignKey(Race, on_delete=models.CASCADE, related_name='character', blank=True, null=True)
     # campaign = models.ForeignKey(campaign=Campaign, on_delete=models.CASCADE, related_name='characters')
     name = models.CharField(max_length=20)
-    totalLevel = models.IntegerField()
-    dex = models.IntegerField()
-    str = models.IntegerField()
-    con = models.IntegerField()
-    wis = models.IntegerField()
-    int = models.IntegerField()
-    cha = models.IntegerField()
-    speed = models.IntegerField()
-    maxHp = models.IntegerField()
-    currentHp = models.IntegerField(default=maxHp)
+    totalLevel = models.IntegerField(blank=True, null=True)
+    dex = models.IntegerField(blank=True, null=True)
+    str = models.IntegerField(blank=True, null=True)
+    con = models.IntegerField(blank=True, null=True)
+    wis = models.IntegerField(blank=True, null=True)
+    int = models.IntegerField(blank=True, null=True)
+    cha = models.IntegerField(blank=True, null=True)
+    speed = models.IntegerField(blank=True, null=True)
+    maxHp = models.IntegerField(blank=True, null=True)
+    currentHp = models.IntegerField(blank=True, null=True)
     tempHp = models.IntegerField(default=0)
     proficiencies = models.ManyToManyField(Proficiency)
 
@@ -183,7 +214,8 @@ class Character(models.Model):
     def __str__(self):
         return self.name
 
-class ClassLevel(models.Model):
+
+class ClassLevel(models.Model): #Many to Many relationship between character and characterClass with additional level information
     classLvlId = models.AutoField(primary_key=True)
     charClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE, related_name='classLevel')
     charSubclass = models.ForeignKey(CharacterSubclass, on_delete=models.CASCADE, related_name='classLevel', blank=True,

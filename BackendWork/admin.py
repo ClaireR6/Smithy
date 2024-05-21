@@ -16,6 +16,10 @@ class CharacterAdmin(admin.ModelAdmin):
 
 admin.site.register(Character, CharacterAdmin)
 
+admin.site.register(Race)
+admin.site.register(Language)
+admin.site.register(Trait)
+admin.site.register(Feature)
 admin.site.register(User)
 admin.site.register(CharacterClass)
 admin.site.register(CharacterSubclass)

@@ -12,13 +12,14 @@
             <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
             <span class="yellow">For the Players</span>
             <h3 class="yellow mb-5">Your Characters</h3>
-                {% for c in characters %}
+                {% for c in user.get_characters %}
+                    <a href="{% url 'builder_base' c.characterId %}" style="color: #bdbdbd; min-height: 5rem; display: inline-block">{{ c.name }}</a> <br>
                 {% endfor %}
-                {% if not characters %}
+                {% if not user.get_characters %}
                     <span style="color: #bdbdbd; min-height: 5rem; display: inline-block">You do not have any characters</span>
                 {% endif %}
             <hr class="my-5 yellow border-5 opacity-100">
-            <a href="/createcharacter" class="btn yellow yellowBtn" style="text-decoration: none">Create Character</a>
+            <a href="/create_character" class="btn yellow yellowBtn" style="text-decoration: none">Create Character</a>
             </div>
         {% else %}
             <div class="p-5 mt-3 text-center w-100" style="background-color: #161718; min-height:90%">
