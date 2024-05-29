@@ -75,7 +75,7 @@ def create_character(request):
                                          owner=request.user)
     character.save()
 
-    return redirect('builder_base', character=character)
+    return redirect('builder_base', character_id=character.characterId)
 
 
 @login_required()
@@ -93,7 +93,7 @@ def builder_race(request, character_id):
 
 @login_required()
 def builder_class(request, character_id):
-    classes = CharacterClass.objects.all()
+    classes = CharacterClass.objects.all().exclude(classLevel__character=character_id)
     character = Character.objects.get(characterId=character_id)
     return render(request, 'builder_base.html',
                   {"character": character, "classes": classes, "link": 'builder_class.html'})
@@ -126,11 +126,15 @@ class ManageClass(View):
                     "features": list(charClass.features.all().values("featId", "name", "description", "levelReq"))}
             return JsonResponse(data, safe=False)
 
-        if action == "add":
+        if action == "add": #Changes needed to prevent duplicates
             characterId = request.POST.get("character_id")
             character = Character.objects.get(characterId=characterId)
             charClass = CharacterClass.objects.get(classId=classId)
 
-            classlvl = ClassLevel.objects.create(charClass=charClass, character=character)
-            classlvl.save()
-            return JsonResponse({'message': 'Class Added to Character'}, status=200)
+            classlvl = ClassLevel.objects.filter(charClass=charClass, character=character).first()
+            if classlvl:
+                return redirect('builder_class', character_id=character.characterId)
+            else:
+                classlvl = ClassLevel.objects.create(charClass=charClass, character=character)
+                classlvl.save()
+                return redirect('builder_class', character_id=character.characterId)
