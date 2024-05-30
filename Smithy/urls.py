@@ -27,5 +27,6 @@ urlpatterns = [
     path('create_character/', create_character, name='create_character'),
     path('characters/<int:character_id>/builder/', include('Smithy.builder_urls')),
     path('dbRace/', ManageRace.as_view(), name='manageRace'),
-    path('dbClass/', ManageClass.as_view(), name='manageClass')
+    path('dbClass/', ManageClass.as_view(), name='manageClass'),
+    path('dbCharacter/', ManageCharacter.as_view(), name='manageCharacter'),
 ]

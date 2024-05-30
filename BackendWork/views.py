@@ -138,3 +138,21 @@ class ManageClass(View):
                 classlvl = ClassLevel.objects.create(charClass=charClass, character=character)
                 classlvl.save()
                 return redirect('builder_class', character_id=character.characterId)
+
+class ManageCharacter(View):
+    @staticmethod
+    def get(request):
+        pass
+
+    @staticmethod
+    def post(request):
+        characterId = request.POST.get("character_id")
+        action = request.POST.get("action")
+
+        if action == "remove":
+            character = Character.objects.filter(characterId=characterId).first()
+            if character:
+                character.delete()
+                return JsonResponse({'message': 'Character successfully deleted'}, status=200)
+            else:
+                return JsonResponse({'message': 'Character does not exist'}, status=400)

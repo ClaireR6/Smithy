@@ -1,105 +1,46 @@
 html, body {
     height: 100%;
     width: 100%;
-    right:0;
-    left:0;
-    background-color: #363637;
-;
+    right: 0;
+    left: 0;
+    background-color: #363637;;
 }
 
-.text-input{
+.text-input {
 }
 
 #main {
-    width:100%;
+    width: 100%;
     left: 0;
     right: 0;
 }
 
-#header {
-    z-index: 3;
-    top: 0;
-    max-height: 100px;
-    background-color: #161718;
-    border-bottom: #ff5519 5px solid;
+.link {
+    color: #bdbdbd;
+    text-decoration: none;
+}
+
+.link:hover {
+    opacity: 75%;
+    text-decoration: underline;
 }
 
 .orange {
     color: #ff5519;
 }
 
-#searchBtn {
-    border-radius: 0 3px 3px 0;
-    color: #212529;
-    background: #363637;
-    height: 40px;
-}
 
-#searchBtn:hover {
-    color: #ff5519;
-    opacity: 70%;
-}
-
-
-#search {
-    border-radius: 3px 0 0 3px;
-    border: none;
-    color: #212529;
-    background: #363637;
-    font-size: 18px;
-    height: 40px;
-}
-
-#search::placeholder {
-    color: #4e4e4e;
-}
-
-#signinBtn, #registerBtn {
-    background: transparent;
-    border-radius: 0;
-}
-
-.orangeBtn:hover{
+.orangeBtn:hover {
     background-color: #ff5519;
     color: #161718;
 }
 
-.orangeBtn{
+.orangeBtn {
     border: #ff5519 2px solid;
     border-radius: 3px;
     background-color: transparent;
 }
 
-#registerBtn:hover {
-    background-color: #ff5519;
-    color: #161718;
-}
-
-#registerBtn {
-    background-color: #161718;
-    color: #ff5519;
-}
-
-#signinBtn {
-    border: #ff5519 2px solid;
-    border-radius: 3px;
-}
-
-#signinBtn:hover {
-    background-color: #ff5519;
-    color: #161718;
-}
-
-
-.link {
-    color: white;
-    font-weight:bold;
-    text-decoration: none;
-}
-
-.link:hover {
-    color: #bdbdbd;
-}
 
 .red {
     background-color: red
@@ -109,13 +50,13 @@ html, body {
     color: #14a763;
 }
 
-.greenBtn{
+.greenBtn {
     border: #14a763 2px solid;
     border-radius: 3px;
     background-color: transparent;
 }
 
-.greenBtn:hover{
+.greenBtn:hover {
     background-color: #14a763;
     color: #161718;
 }
@@ -125,17 +66,17 @@ html, body {
     color: #ffe400;
 }
 
-.yellowBtn{
+.yellowBtn {
     border: #ffe400 2px solid;
     border-radius: 3px;
     background-color: transparent;
 }
 
-.yellowBtn:hover{
+.yellowBtn:hover {
     background-color: #ffe400;
     color: #161718;
 }
 
-.greyText{
+.greyText {
     color: #bdbdbd;
 }

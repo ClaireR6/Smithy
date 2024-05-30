@@ -18,7 +18,7 @@
                 <span class="d-inline-block greyText">{% if character.race %} {{ character.race }} {% else %} No
                     Race {% endif %}</span> <br>
                 {% for class in character.classLevel.all %}
-                    <span class="d-inline-block greyText"> {{ class }} </span> <br>
+                    <span class="d-inline-block greyText"> {{ class.charClass }} </span> <br>
                 {% endfor %}
 
                 {% if not character.classLevel.all %}

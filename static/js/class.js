@@ -13,6 +13,34 @@ function getCookie(name) {
     return cookieValue;
 }
 
+function makeToast(message, status) {
+    var toast = document.getElementById("toast");
+    var bgColor = "";
+    if (status == 200) {
+        bgColor = "bg-success";
+    } else if (status == 400) {
+        bgColor = "bg-danger";
+    }
+    toast.classList.add(bgColor)
+
+    var toastBody = toast.querySelector('.toast-body');
+
+    // Set the message
+    toastBody.textContent = message;
+
+    // Show the toast
+    var bootstrapToast = new bootstrap.Toast(toast);
+    bootstrapToast.show();
+
+    setTimeout(function () {
+        if (status == 200) {
+            bootstrapToast.hide();
+            toast.classList.remove(bgColor);
+            toastBody.textContent = "";
+        }
+    }, 4000);
+}
+
 const data = document.currentScript.dataset;
 const characterId = parseInt(data.characterid, 10)
 
@@ -34,17 +62,18 @@ function addClass(classId, characterId) {
             type: "POST",
             url: "/dbClass/",
             data: {action: "add", class_id: classId, character_id: characterId},
+            success: function(){window.location.reload()},
             error: reporterr
         }
     )
 }
 
-// Fills race information on page
+// Fills class information on page
 function fill(data) {
     if (data) {
         let infoHtml = "";
         infoHtml +=
-            "<h3 class=\"yellow d-flex\"> " + data.classInfo.name + "<button class=\'btn btn-success ms-auto\' onclick=\'addClass(" + data.classInfo.classId + ", "+characterId+")\'> Add Class </button> </h3>\n" +
+            "<h3 class=\"yellow d-flex flex-row h-100 align-items-center\"> " + data.classInfo.name + "<button class=\'btn btn-success ms-auto\' onclick=\'addClass(" + data.classInfo.classId + ", "+characterId+")\'> Add Class </button> </h3>\n" +
             "<hr class=\"yellow my-3 border-3 opacity-100\">";
 
         const feats = data.features
@@ -77,6 +106,9 @@ function fill(data) {
         })
         infoHtml += "</div>";
         $("#classInfo").html(infoHtml)
+    }
+    else{
+        $("#classInfo").html("")
     }
 
 }

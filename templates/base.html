@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'icons/favicon.ico' %}">
     <meta charset="UTF-8">
     <title>Smithy</title>
 </head>
@@ -15,7 +17,7 @@
 <div class="col-12">
     <div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
         <div class="col-md-2 col-lg-1 col-sm-2 col-1 justify-content-left align-items-center me-1 d-flex">
-            <a href="/" class="link align-items-center d-flex flex-nowrap">
+            <a href="/" class="SmthyLink align-items-center d-flex flex-nowrap">
                 <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span
                     class="d-none d-sm-flex">Smithy</span>
             </a>
@@ -26,19 +28,19 @@
                 <i class="fa fa-lg fa-bars mx-auto w-100 h-100" style="color:white"></i>
             </button>
             <div class="dropdown-menu" style="background-color:#161718" aria-labelledby="dropdownBtn">
-                <a href="/" class="link dropdown-item">Campaigns</a>
-                <a href="/" class="link dropdown-item">Characters</a>
-                <a href="/" class="link dropdown-item">Homebrew</a>
+                <a href="/" class="hdrLink dropdown-item">Campaigns</a>
+                <a href="/" class="hdrLink dropdown-item">Characters</a>
+                <a href="/" class="hdrLink dropdown-item">Homebrew</a>
             </div>
         </div>
         <div class="col-auto d-lg-block d-none d-flex ms-2 mx-1 px-1">
-            <a href="/" class="link">Campaigns</a>
+            <a href="/" class="hdrLink">Campaigns</a>
         </div>
         <div class="col-auto d-lg-block d-none d-flex mx-1 px-1">
-            <a href="/" class="link">Characters</a>
+            <a href="/" class="hdrLink">Characters</a>
         </div>
         <div class="col-auto d-lg-block d-none d-flex mx-1 px-1">
-            <a href="/" class="link">Homebrew</a>
+            <a href="/" class="hdrLink">Homebrew</a>
         </div>
         <div class="d-none d-sm-block col-sm-3 col-md-4 col-lg-5">
             <form id="searchForm">

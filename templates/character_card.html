@@ -1,0 +1,21 @@
+<div class="row d-flex mx-auto align-items-center my-3 p-2 w-100 flex-sm-row flex-column rounded"
+     style="border: 3px solid #bdbdbd">
+    <div class="col-auto mb-2 mb-sm-1 p-2 my-1 h-100">
+        <a href="{% url 'builder_base' c.characterId %}" class="greyText"
+           style="min-height: 5rem; text-decoration: none">{{ c.name }}</a> <br>
+    </div>
+    <div class="col-auto mb-2 mb-sm-0 ms-sm-auto justify-content-center d-flex flex-row">
+        <div class="col-auto mx-2 h-100 justify-content-sm-center justify-content-start">
+            <a href="" class="btn btn-md btn-light">View</a>
+        </div>
+        <div class="col-auto mx-2 h-100 justify-content-sm-center justify-content-start">
+            <a href="{% url 'builder_base' c.characterId %}" class="btn btn-md btn-light">Edit</a>
+        </div>
+        <div class="col-auto mx-2 p-0 h-100 justify-content-sm-center justify-content-start">
+            <button class="js-remove btn btn-dark btn-md rounded" style="background: transparent"
+                    data-characterid="{{ c.characterId }}">
+                <i class="fa-solid fa-x" style="color: red;"></i>
+            </button>
+        </div>
+    </div>
+</div>
