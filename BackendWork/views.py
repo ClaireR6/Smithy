@@ -108,9 +108,16 @@ class ManageRace(View):
         if action == "get":
             # send back race speed, size, traits, age
             race = Race.objects.get(raceId=raceId)
-            data = {"raceName": race.raceName, "speed": race.speed,
+            data = {"raceInfo": {"raceId": race.raceId, "raceName": race.raceName, "speed": race.speed},
                     "traits": list(race.traits.all().values("name", "description"))}
             return JsonResponse(data, safe=False)
+        if action == "set":
+            characterId = request.POST.get("character_id")
+            character = Character.objects.get(characterId=characterId)
+            race = Race.objects.get(raceId=raceId)
+            character.race = race
+            character.save()
+            return redirect('builder_race', character_id=character.characterId)
 
 
 class ManageClass(View):

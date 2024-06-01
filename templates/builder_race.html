@@ -7,7 +7,11 @@
             onchange="this.blur()">
         <option value="unselected">Choose a Race</option>
         {% for r in races %}
-            <option value="{{ r.raceId }}">{{ r.raceName }}</option>
+            {% if character.race and character.race == r %}
+                <option selected value="{{ r.raceId }}">{{ r.raceName }}</option>
+            {% else %}
+                <option value="{{ r.raceId }}">{{ r.raceName }}</option>
+            {% endif %}
         {% endfor %}
     </select>
     <div id="raceInfo" class="text-start">
@@ -17,4 +21,4 @@
     <a href="{% url 'builder_class' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
             class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
 </div>
-<script src="{% static 'js/race.js' %}"></script>
+<script src="{% static 'js/race.js' %}" defer data-characterRace="{{ character.race.raceId }}" data-characterId="{{ character.characterId }}"></script>

@@ -178,7 +178,6 @@ class Character(models.Model):
     wis = models.IntegerField(blank=True, null=True)
     int = models.IntegerField(blank=True, null=True)
     cha = models.IntegerField(blank=True, null=True)
-    speed = models.IntegerField(blank=True, null=True)
     maxHp = models.IntegerField(blank=True, null=True)
     currentHp = models.IntegerField(blank=True, null=True)
     tempHp = models.IntegerField(default=0)
