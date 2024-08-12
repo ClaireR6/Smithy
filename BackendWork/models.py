@@ -2,6 +2,9 @@ from math import floor
 
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from django.db.models import Sum
+from django.db.models.signals import post_save, post_delete
+from django.dispatch import receiver
 
 
 class User(AbstractUser):
@@ -127,15 +130,27 @@ class Trait(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
 
+    # has_choices = models.BooleanField(default=False)  # Indicates if this trait has options
+    def __str__(self):
+        return self.name
+
+
+# class TraitChoice(models.Model):
+#     traitChoiceId = models.AutoField(primary_key=True)
+#     trait = models.ForeignKey(Trait, on_delete=models.CASCADE, related_name='choices')
+#     name = models.CharField(max_length=50)
+#     # Add action field. On choice select, add action to character
+
 
 class Race(models.Model):
     raceId = models.AutoField(primary_key=True)
     raceName = models.CharField(max_length=20)
     speed = models.PositiveIntegerField()
-    traits = models.ManyToManyField(Trait)
+    traits = models.ManyToManyField(Trait, related_name='race')
 
     def __str__(self):
         return self.raceName
+
 
 class CharacterClass(models.Model):
     classId = models.AutoField(primary_key=True)
@@ -170,7 +185,7 @@ class Character(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='character')
     race = models.ForeignKey(Race, on_delete=models.CASCADE, related_name='character', blank=True, null=True)
     # campaign = models.ForeignKey(campaign=Campaign, on_delete=models.CASCADE, related_name='characters')
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, blank=True)
     totalLevel = models.IntegerField(blank=True, null=True)
     dex = models.IntegerField(blank=True, null=True)
     str = models.IntegerField(blank=True, null=True)
@@ -182,6 +197,15 @@ class Character(models.Model):
     currentHp = models.IntegerField(blank=True, null=True)
     tempHp = models.IntegerField(default=0)
     proficiencies = models.ManyToManyField(Proficiency)
+
+    def save(self, *args, **kwargs):
+        if not self.name:
+            self.name = f"{self.owner.username}'s Character"
+        super().save(*args, **kwargs)
+
+    def update_total_level(self):
+        self.totalLevel = self.classLevel.aggregate(Sum('level'))['level__sum'] or 0
+        self.save()
 
     def get_attr_mod(self, attr):
         if attr == 'dex':
@@ -214,7 +238,7 @@ class Character(models.Model):
         return self.name
 
 
-class ClassLevel(models.Model): #Many to Many relationship between character and characterClass with additional level information
+class ClassLevel(models.Model):  # Many to Many relationship between character and characterClass with additional level information
     classLvlId = models.AutoField(primary_key=True)
     charClass = models.ForeignKey(CharacterClass, on_delete=models.CASCADE, related_name='classLevel')
     charSubclass = models.ForeignKey(CharacterSubclass, on_delete=models.CASCADE, related_name='classLevel', blank=True,
@@ -227,3 +251,9 @@ class ClassLevel(models.Model): #Many to Many relationship between character and
             return f"{self.charClass} {self.charSubclass} {self.level} {self.character}"
         else:
             return f"{self.charClass} {self.character}"
+
+
+@receiver(post_save, sender=ClassLevel)
+@receiver(post_delete, sender=ClassLevel)
+def update_character_total_level(sender, instance, **kwargs):
+    instance.character.update_total_level()

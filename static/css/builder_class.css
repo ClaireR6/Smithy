@@ -1,5 +1,34 @@
-.collapseBtn:focus, .collapseBtn:hover{
+.collapseBtn {
     border: none;
     outline: none;
+    transition: filter 0.3s ease;
+}
+
+.collapseBtnYlw:hover {
     color: #ffe400;
+    filter: brightness(75%);
+}
+
+.collapseBtnWht:hover {
+    color: white;
+    filter: brightness(75%);
+}
+
+.classLvl-select {
+    background-color: white;
+    border: 2px solid #b1b6bb;
+    border-radius: 0;
+    box-shadow: inset 0 0 6px 0 #4D4F52FF;
+    padding: 2px;
+}
+
+.primary-color{
+    fill:lightblue;
+}
+.secondary-color{
+    fill:blue;
+}
+.ddbc-svg{
+    aspect-ratio: 1/1;
+    max-height: 100px;
 }

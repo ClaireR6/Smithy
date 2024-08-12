@@ -1,24 +1,85 @@
 {% load static %}
+{% load custom_range %}
 <div class="d-flex flex-column p-3 m-2 overflow-y-auto">
-    <h3 class="yellow">Choose your character's class</h3>
-    <hr class="my-3 yellow border-5 opacity-100">
-    <select id="classSelect" class="form-select form-select-lg mb-3" aria-label="select"
-            onfocus="if(this.options.length>5){this.size=5;}" onblur="this.removeAttribute('size')"
-            onchange="this.blur()">
-        <option value="unselected">Choose a Class</option>
-        {% for c in classes %}
-            <option value="{{ c.classId }}">{{ c.name }}</option>
-        {% endfor %}
-    </select>
-    <div id="classInfo" class="text-start">
-        
+    <div class="d-flex m-3 mt-auto" style="height:40px">
+        <a href="{% url 'builder_race' character.characterId %}"
+           class="btn yellow yellowBtn me-auto align-content-center"><i
+                class="fa fa-lg fa-solid fa-left-long mx-auto w-100"></i></a>
+        <h3 class="yellow mx-auto my-auto px-3">Choose your character's class</h3>
+        <a href="{% url 'builder_race' character.characterId %}"
+           class="btn yellow yellowBtn ms-auto align-content-center"><i
+                class="fa fa-lg fa-solid fa-right-long mx-auto w-100"></i></a>
     </div>
+{#<div id="test"></div>#}
+{#<script src="{% static 'js/svg/attribute.js' %}"></script>#}
+{#    <object type="image/svg+xml" data="{% static 'images/test.svg' %}" class="filter-blue" style="aspect-ratio: 1/1; height:150px"></object>#}
+    <div id="classLvlContainer">
+        {% for classLvl in character.classLevel.all %}
+            <div class="my-5 d-flex">
+                <h3 class="justify-self-start" style="color: white">
+                    {{ classLvl.charClass }}
+                </h3>
+                <div class="ms-auto align-content-center">
+                    <label class="whiteText" style="font-weight:bold"
+                           for="classLvl-{{ classLvl.classLvlId }}">Level</label>
+                    <select class="classLvl-select" id="classLvl-{{ classLvl.classLvlId }}"
+                            data-classlvlid="{{ classLvl.classLvlId }}" style="width:50px">
+                        {% for i in 21|subtract:character.totalLevel|add:classLvl.level|custom_range %}
+                            <option value="{{ i }}" {% if i == classLvl.level %} selected {% endif %} >{{ i }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <button class="js-remove btn border-0 mx-2 remove-class" style="background: transparent"
+                        data-classlvlid="{{ classLvl.classLvlId }}">
+                    <i class="fa-solid fa-x" style="color: red;"></i>
+                </button>
+            </div>
+            <hr class="grey my-3 border-3 opacity-100">
+            <div class="accordion">
+                {% for feat in classLvl.charClass.features.all %}
+                    {% if feat.levelReq <= classLvl.level %}
+                        <div class="card bg-transparent border-0">
+                            <div class="card-header border-0"
+                                 id="heading{{ classLvl.charClass.classId }}{{ feat.featId }}">
+                                <button class="d-flex flex-row p-0 btn btn-lg w-100 whiteText collapseBtnWht text-start border-0"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#collapse{{ classLvl.charClass.classId }}{{ feat.featId }}"
+                                        aria-expanded="true"
+                                        aria-controls="collapse{{ classLvl.charClass.classId }}{{ feat.featId }}"
+                                        onclick="toggleArrow({{ classLvl.charClass.classId }}{{ feat.featId }})">
+                                    <p class="me-auto whiteText"> {{ feat.name }} </p>
+                                    <i id="icon{{ classLvl.charClass.classId }}{{ feat.featId }}"
+                                       class="fa whiteText ms-auto fa-caret-down" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                            <div id="collapse{{ classLvl.charClass.classId }}{{ feat.featId }}"
+                                 class="border-0 collapse"
+                                 aria-labelledby="heading{{ classLvl.charClass.classId }}{{ feat.featId }}"
+                                 data-parent="#accordion">
+                                <div class="card-body whiteText"
+                                     style="text-align: start">{{ feat.description|safe }}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+    <hr class="my-3 yellow border-5 opacity-100">
+    {% if not character.totalLevel or character.totalLevel < 20 %}
+        <select id="classSelect" class="form-select form-select-lg mb-3" aria-label="select"
+                onfocus="if(this.options.length>5){this.size=5;}" onblur="this.removeAttribute('size')"
+                onchange="this.blur()">
+            <option value="unselected">Choose a Class</option>
+            {% for c in classes %}
+                <option value="{{ c.classId }}">{{ c.name }}</option>
+            {% endfor %}
+        </select>
+        <div id="classInfo" class="text-start"> </div> {# JS Fill Div #}
+    {% endif %}
 </div>
-<div class="d-flex m-3 mt-auto h-100">
-    <a href="{% url 'builder_race' character.characterId %}" class="btn yellow yellowBtn me-auto"><i
-            class="fa fa-lg fa-solid fa-left-long mx-auto w-100 h-100"></i></a>
-    <a href="{% url 'builder_race' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
-            class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
-</div>
+
 <link rel="stylesheet" type="text/css" href="{% static 'css/builder_class.css' %}">
 <script src="{% static 'js/class.js' %}" defer data-characterId="{{ character.characterId }}"></script>

@@ -1,0 +1,17 @@
+.collapseBtnYlw:hover {
+    color: #ffe400;
+    filter: brightness(75%);
+}
+
+.collapseBtnWht:hover {
+    color: white;
+    filter: brightness(75%);
+}
+
+.btn:focus{
+    border: none;
+    outline: none;
+}
+.btn:hover{
+    filter: brightness(75%);
+}

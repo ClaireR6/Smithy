@@ -3,7 +3,7 @@ html, body {
     width: 100%;
     right: 0;
     left: 0;
-    background-color: #363637;;
+    background-color: #161718;
 }
 
 .text-input {
@@ -79,4 +79,8 @@ html, body {
 
 .greyText {
     color: #bdbdbd;
+}
+
+.whiteText {
+    color: white;
 }

@@ -30,31 +30,54 @@ function setRace(raceId, characterId) {
     )
 }
 
+function toggleArrow(id) {
+    $("#icon" + id).toggleClass("fa-caret-down")
+    $("#icon" + id).toggleClass("fa-caret-right")
+}
+
+function showSelect(){
+    $("#raceSelect").toggleClass("d-none")
+}
+
 // Fills race information on page
 function fill(data) {
     if (data) {
         let infoHtml = "";
         if (data.raceInfo.raceId !== characterRace) {
-            infoHtml += "<h3 class=\"yellow d-flex flex-row h-100 align-items-center\"> " + data.raceInfo.raceName + " <button class=\'btn btn-success ms-auto\' onclick=\'setRace(" + data.raceInfo.raceId + ", " + characterId + ")\'> Set Race </button></h3>\n"
+            infoHtml += "<h3 class=\"yellow d-flex flex-row h-100 align-items-center\"> " + data.raceInfo.raceName + " <button class=\'btn btn-success ms-auto\' onclick=\'setRace(" + data.raceInfo.raceId + ", " + characterId + ")\'> Confirm </button></h3>\n"
         } // <button class=\'btn btn-success ms-auto\' onclick=\'addClass(" + data.classInfo.classId + ", "+characterId+")\'> Add Class </button>
         else {
             infoHtml += "<h3 class=\"yellow\"> " + data.raceInfo.raceName + " </h3>\n"
         }
-        infoHtml +=
-            "<hr class=\"yellow my-3 border-3 opacity-100\">" +
-            "<h4 class=\"yellow\"> Ability Score Increases</h4>\n" +
-            "<p class=\"greyText\"> There's info that goes here </p>\n" +
-            "<h4 class=\"yellow\"> Speed </h4>\n" +
-            "<p class=\"greyText\"> Your walking speed is " + data.raceInfo.speed + "</p>";
-
 
         const traits = data.traits
+        infoHtml += "<div id=\"accordion\">"
         traits.forEach(function (trait) {
             infoHtml +=
-                "<h4 class=\"yellow\"> " + trait.name + " </h4>\n" +
-                "<p class=\"greyText\"> " + trait.description + " </p>";
+                "<div class=\"card bg-transparent border-0\">" +
+                "<div class=\"card-header border-0\" id=\"heading" + data.raceInfo.raceId + "" + trait.traitId + "\">" +
+                // "<h5 class=\"mb-0\">" +
+                "<button class=\"d-flex flex-row p-0 btn btn-lg w-100 yellow collapseBtnYlw text-start border-0\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse" + data.raceInfo.raceId + "" + trait.traitId + "\"" +
+                "aria-expanded=\"true\" aria-controls=\"collapse" + data.raceInfo.raceId + "" + trait.traitId + "\" onclick=\'toggleArrow(" + data.raceInfo.raceId + "" + trait.traitId + ")\'>" +
+                "<p class=\'me-auto\'> " + trait.name + " </p>" +
+                "<i id=\"icon" + data.raceInfo.raceId + "" + trait.traitId + "\" class=\"fa fa-caret-down yellow ms-auto\"></i>" +
+                "</button>" +
+                // "</h5>" +
+                "</div>" +
+                "<div id=\"collapse" + data.raceInfo.raceId + "" + trait.traitId + "\" class=\"collapse border-0\" aria-labelledby=\"heading" + data.raceInfo.raceId + "" + trait.traitId + "\"" +
+                "data-parent=\"#accordion\">" +
+                "<div class=\"card-body greyText\">" +
+                // "<hr class=\'border-5 opacity-100 mb-3 mt-0 yellow\' >" +
+                trait.description +
+                "</div>" +
+                "</div>" +
+                "</div>";
         })
+        infoHtml += "</div>";
         $("#raceInfo").html(infoHtml)
+    }
+    else{
+        $("#raceInfo").html("")
     }
 
 }
@@ -74,9 +97,8 @@ $(function () //ready function
         }
     });
 
-    changed()
 
-    function changed() {
+    $("#raceSelect").change(function () {
 
         let raceId = $("#raceSelect").val()
 
@@ -102,10 +124,6 @@ $(function () //ready function
         } else {
             $("#raceInfo").html("")
         }
-    }
-
-    $("#raceSelect").change(function () {
-        changed()
     });
 });
 

@@ -1,8 +1,48 @@
 {% load static %}
 <div class="d-flex flex-column p-3 m-2 overflow-y-auto">
-    <h3 class="yellow">Choose your character's race</h3>
+    <div class="d-flex m-3 mt-auto h-100">
+        <a href="{% url 'builder_base' character.characterId %}" class="btn yellow yellowBtn me-auto"><i
+                class="fa fa-lg fa-solid fa-left-long mx-auto w-100 h-100"></i></a>
+        <h3 class="yellow mx-auto">Choose your character's race</h3>
+        <a href="{% url 'builder_class' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
+                class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
+    </div>
+    {% if character.race %}
+        <h3 class="d-flex flex-row whiteText text-start"> {{ character.race.raceName }}
+            <button class="ms-auto whiteText btn" onclick="showSelect()"> Change Race</button>
+        </h3>
+        <div id="accordion">
+            {% for trait in character.race.traits.all %}
+                <div class="card bg-transparent border-0">
+                    <div class="card-header border-0"
+                         id="heading{{ trait.traitId }}">
+                        <button class="d-flex flex-row p-0 btn btn-lg w-100 whiteText collapseBtnWht text-start border-0"
+                                data-bs-toggle="collapse"
+                                data-bs-target="#collapse{{ trait.traitId }}"
+                                aria-expanded="true"
+                                aria-controls="collapse{{ trait.traitId }}"
+                                onclick="toggleArrow({{ trait.traitId }})">
+                            <p class="me-auto whiteText"> {{ trait.name }} </p>
+                            <i id="icon{{ trait.traitId }}"
+                               class="fa whiteText ms-auto fa-caret-down" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div id="collapse{{ trait.traitId }}"
+                         class="border-0 collapse"
+                         aria-labelledby="heading{{ trait.traitId }}"
+                         data-parent="#accordion">
+                        <div class="card-body whiteText"
+                             style="text-align: start">{{ trait.description|safe }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
     <hr class="my-3 yellow border-5 opacity-100">
-    <select id="raceSelect" class="form-select form-select-lg mb-3" aria-label="select"
+    <select id="raceSelect" class="form-select form-select-lg mb-3 {% if character.race %} d-none {% endif %}"
+            aria-label="select"
             onfocus="if(this.options.length>5){this.size=5;}" onblur="this.removeAttribute('size')"
             onchange="this.blur()">
         <option value="unselected">Choose a Race</option>
@@ -17,8 +57,10 @@
     <div id="raceInfo" class="text-start">
     </div>
 </div>
-<div class="d-flex m-3 mt-auto h-100">
-    <a href="{% url 'builder_class' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i
-            class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>
-</div>
-<script src="{% static 'js/race.js' %}" defer data-characterRace="{{ character.race.raceId }}" data-characterId="{{ character.characterId }}"></script>
+{#<div class="d-flex m-3 mt-auto h-100">#}
+{#    <a href="{% url 'builder_class' character.characterId %}" class="btn yellow yellowBtn ms-auto"><i#}
+{#            class="fa fa-lg fa-solid fa-right-long mx-auto w-100 h-100"></i></a>#}
+{#</div>#}
+<link rel="stylesheet" type="text/css" href="{% static 'css/builder_race.css' %}">
+<script src="{% static 'js/race.js' %}" defer data-characterRace="{{ character.race.raceId }}"
+        data-characterId="{{ character.characterId }}"></script>

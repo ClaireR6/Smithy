@@ -71,8 +71,7 @@ def user_logout(request):
 def create_character(request):
     num = Character.objects.filter(owner=request.user).count() + 1
     print(request.user)
-    character = Character.objects.create(name=request.user.username + '\'s Character(' + str(num) + ')',
-                                         owner=request.user)
+    character = Character.objects.create(owner=request.user)
     character.save()
 
     return redirect('builder_base', character_id=character.characterId)
@@ -109,7 +108,7 @@ class ManageRace(View):
             # send back race speed, size, traits, age
             race = Race.objects.get(raceId=raceId)
             data = {"raceInfo": {"raceId": race.raceId, "raceName": race.raceName, "speed": race.speed},
-                    "traits": list(race.traits.all().values("name", "description"))}
+                    "traits": list(race.traits.all().values("traitId", "name", "description"))}
             return JsonResponse(data, safe=False)
         if action == "set":
             characterId = request.POST.get("character_id")
@@ -124,6 +123,8 @@ class ManageClass(View):
     @staticmethod
     def post(request):
         classId = request.POST.get("class_id")
+        characterId = request.POST.get("character_id")
+        character = Character.objects.get(characterId=characterId)
         action = request.POST.get("action")
 
         if action == "get":
@@ -133,18 +134,40 @@ class ManageClass(View):
                     "features": list(charClass.features.all().values("featId", "name", "description", "levelReq"))}
             return JsonResponse(data, safe=False)
 
-        if action == "add": #Changes needed to prevent duplicates
-            characterId = request.POST.get("character_id")
-            character = Character.objects.get(characterId=characterId)
+        if action == "add":  # Changes needed to prevent duplicates
             charClass = CharacterClass.objects.get(classId=classId)
 
-            classlvl = ClassLevel.objects.filter(charClass=charClass, character=character).first()
-            if classlvl:
-                return redirect('builder_class', character_id=character.characterId)
+            classLvl = ClassLevel.objects.filter(charClass=charClass, character=character).first()
+            if classLvl:
+                return redirect('builder_class', character_id=characterId)
             else:
-                classlvl = ClassLevel.objects.create(charClass=charClass, character=character)
-                classlvl.save()
+                classLvl = ClassLevel.objects.create(charClass=charClass, character=character)
+                classLvl.save()
+                return redirect('builder_class', character_id=characterId)
+
+        if action == "level":  # Change in level
+            classLvlId = request.POST.get("classlvl_id")
+            classLvl = ClassLevel.objects.get(classLvlId=classLvlId, character=character)
+            if not classLvl:  # Ensure character has associated classLvl
+                return JsonResponse({'error': 'Invalid class level'}, status=400)
+
+            newLevel = int(request.POST.get("level"))
+            if character.totalLevel - classLvl.level + newLevel > 20:  # Condition in case of tampering with input options
+                return JsonResponse({'error': 'New level exceeds level limit'}, status=400)
+
+            classLvl.level = newLevel
+            classLvl.save()
+            return redirect('builder_class', character_id=character.characterId)
+
+        if action == "remove":  # Remove class level
+            classLvlId = request.POST.get("classlvl_id")
+            classLvl = ClassLevel.objects.get(classLvlId=classLvlId, character=character)
+            if classLvl:
+                classLvl.delete()
                 return redirect('builder_class', character_id=character.characterId)
+
+            return JsonResponse({'error': 'Class Level does not exist'}, status=400)
+
 
 class ManageCharacter(View):
     @staticmethod
