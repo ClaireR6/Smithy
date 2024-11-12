@@ -1,0 +1,786 @@
+[
+  {
+    "model": "BackendWork.Race",
+    "pk": 1,
+    "fields": {
+      "raceName": "Dragonborn",
+      "speed": 30,
+      "traits": [1,2,3,4,5,6]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 2,
+    "fields": {
+      "raceName": "Dwarf",
+      "speed": 30,
+      "traits": [7,8,9,10,11,12,13,14,15]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 3,
+    "fields": {
+      "raceName": "Elf",
+      "speed": 30,
+      "traits": [16,17,18,19,20,21,22]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 4,
+    "fields": {
+      "raceName": "Gnome",
+      "speed": 30,
+      "traits": [23,24,25,26,27]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 5,
+    "fields": {
+      "raceName": "Half-Elf",
+      "speed": 30,
+      "traits": [28,29,30,31,32,33]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 6,
+    "fields": {
+      "raceName": "Halfling",
+      "speed": 30,
+      "traits": [34,35,36,37,38,39]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 7,
+    "fields": {
+      "raceName": "Half-Orc",
+      "speed": 35,
+      "traits": [40,41,42,43,44,45,46]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 8,
+    "fields": {
+      "raceName": "Human",
+      "speed": 30,
+      "traits": [47,48,49]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 9,
+    "fields": {
+      "raceName": "Tiefling",
+      "speed": 30,
+      "traits": [50,51,52,53,54,55]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 10,
+    "fields": {
+      "raceName": "Aarakocra",
+      "speed": 30,
+      "traits": [76]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 11,
+    "fields": {
+      "raceName": "Aasimar",
+      "speed": 30,
+      "traits": [62,63,64,65,66,67]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 12,
+    "fields": {
+      "raceName": "Air Genasi",
+      "speed": 35,
+      "traits": [139,68,]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 13,
+    "fields": {
+      "raceName": "Bugbear",
+      "speed": 30,
+      "traits": [74,75,76,77,78,79,80,81,82]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 14,
+    "fields": {
+      "raceName": "Centaur",
+      "speed": 30,
+      "traits": [83,84,85,86,87,88,89,90,91]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 15,
+    "fields": {
+      "raceName": "Changeling",
+      "speed": 30,
+      "traits": [92,93,94,95,96,97]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 16,
+    "fields": {
+      "raceName": "Deep Gnome",
+      "speed": 30,
+      "traits": [98,99,100,101,102,103,104]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 17,
+    "fields": {
+      "raceName": "Duergar",
+      "speed": 30,
+      "traits": [105,106,107,108,109,110,111,112]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 18,
+    "fields": {
+      "raceName": "Earth Genasi",
+      "speed": 30,
+      "traits": [68,69,70,71,113,114]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 19,
+    "fields": {
+      "raceName": "Eladrin",
+      "speed": 30,
+      "traits": [115,116,117,118,119,120,121,122]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 20,
+    "fields": {
+      "raceName": "Fairy",
+      "speed": 30,
+      "traits": [123,124,125,126,127]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 21,
+    "fields": {
+      "raceName": "Firbolg",
+      "speed": 30,
+      "traits": [128,129,130,131,132,133,134]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 22,
+    "fields": {
+      "raceName": "Fire Genasi",
+      "speed": 30,
+      "traits": [68,69,70,71,135,136,137]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 23,
+    "fields": {
+      "raceName": "Githyanki",
+      "speed": 30,
+      "traits": [139,140,141,142,143,104]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 24,
+    "fields": {
+      "raceName": "Githzerai",
+      "speed": 30,
+      "traits": [139,140,143,104,145,146]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 25,
+    "fields": {
+      "raceName": "Goblin",
+      "speed": 30,
+      "traits": [147,148,149,150,151,152,153]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 26,
+    "fields": {
+      "raceName": "Goliath",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 27,
+    "fields": {
+      "raceName": "Harengon",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 28,
+    "fields": {
+      "raceName": "Hobgoblin",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 29,
+    "fields": {
+      "raceName": "Kenku",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 30,
+    "fields": {
+      "raceName": "Kobold",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 31,
+    "fields": {
+      "raceName": "Lizardfolk",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 32,
+    "fields": {
+      "raceName": "Minotaur",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 33,
+    "fields": {
+      "raceName": "Orc",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 34,
+    "fields": {
+      "raceName": "Satyr",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 35,
+    "fields": {
+      "raceName": "Sea Elf",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 36,
+    "fields": {
+      "raceName": "Shadar-kai",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 37,
+    "fields": {
+      "raceName": "Shifter",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 38,
+    "fields": {
+      "raceName": "Tabaxi",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 39,
+    "fields": {
+      "raceName": "Tortle",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 40,
+    "fields": {
+      "raceName": "Triton",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 41,
+    "fields": {
+      "raceName": "Water Genasi",
+      "speed": 30,
+      "traits": [68,69,70,71]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 42,
+    "fields": {
+      "raceName": "Yuan-ti",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 43,
+    "fields": {
+      "raceName": "Kender",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 44,
+    "fields": {
+      "raceName": "Astral Elf",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 45,
+    "fields": {
+      "raceName": "Autognome",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 46,
+    "fields": {
+      "raceName": "Giff",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 47,
+    "fields": {
+      "raceName": "Hadozee",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 48,
+    "fields": {
+      "raceName": "Plasmoid",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 49,
+    "fields": {
+      "raceName": "Thri-kreen",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 50,
+    "fields": {
+      "raceName": "Owlin",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 51,
+    "fields": {
+      "raceName": "Lineages",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 52,
+    "fields": {
+      "raceName": "Leonin",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 53,
+    "fields": {
+      "raceName": "Satyr (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 54,
+    "fields": {
+      "raceName": "Changeling (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 55,
+    "fields": {
+      "raceName": "Kalashtar",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 56,
+    "fields": {
+      "raceName": "Shifter (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 57,
+    "fields": {
+      "raceName": "Warforged",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 58,
+    "fields": {
+      "raceName": "Verdan",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 59,
+    "fields": {
+      "raceName": "Centaur (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 60,
+    "fields": {
+      "raceName": "Loxodon",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 61,
+    "fields": {
+      "raceName": "Minotaur (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 62,
+    "fields": {
+      "raceName": "Simic Hybrid",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 63,
+    "fields": {
+      "raceName": "Vedalken",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 64,
+    "fields": {
+      "raceName": "Feral Tiefling",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 65,
+    "fields": {
+      "raceName": "Tortle (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 66,
+    "fields": {
+      "raceName": "Locathah",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 67,
+    "fields": {
+      "raceName": "Grung",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 68,
+    "fields": {
+      "raceName": "Gith (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 69,
+    "fields": {
+      "raceName": "Aasimar (Legacy)",
+      "speed": 30,
+      "traits": []
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 70,
+    "fields": {
+      "raceName": "Bugbear (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 71,
+    "fields": {
+      "raceName": "Firbolg (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 72,
+    "fields": {
+      "raceName": "Goblin (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 73,
+    "fields": {
+      "raceName": "Hobgoblin (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 74,
+    "fields": {
+      "raceName": "Kenku (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 75,
+    "fields": {
+      "raceName": "Kobold (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 76,
+    "fields": {
+      "raceName": "Lizardfolk (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 77,
+    "fields": {
+      "raceName": "Orc (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 78,
+    "fields": {
+      "raceName": "Tabaxi (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 79,
+    "fields": {
+      "raceName": "Triton (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 80,
+    "fields": {
+      "raceName": "Yuan-ti Pureblood (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 81,
+    "fields": {
+      "raceName": "Aarakocra (Legacy)",
+      "speed": 30,
+      "traits": [56,57,58,59,60,61]
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 82,
+    "fields": {
+      "raceName": "Genasi (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 83,
+    "fields": {
+      "raceName": "Goliath (Legacy)",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 84,
+    "fields": {
+      "raceName": "Cervan",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 85,
+    "fields": {
+      "raceName": "Corvum",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 86,
+    "fields": {
+      "raceName": "Gallus",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 87,
+    "fields": {
+      "raceName": "Hedge",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 88,
+    "fields": {
+      "raceName": "Jerbeen",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 89,
+    "fields": {
+      "raceName": "Luma",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 90,
+    "fields": {
+      "raceName": "Mapach",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 91,
+    "fields": {
+      "raceName": "Raptor",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 92,
+    "fields": {
+      "raceName": "Strig",
+      "speed": 30
+    }
+  },
+  {
+    "model": "BackendWork.Race",
+    "pk": 93,
+    "fields": {
+      "raceName": "Vulpin",
+      "speed": 30
+    }
+  }
+]

@@ -5,7 +5,8 @@
         "fields": {
             "subclassAtLevel": 3,
             "name": "Artificer",
-            "spellcasting_ability" : "int"
+            "spellcasting_ability" : "int",
+            "features": [1,2]
         }
     },
     {
@@ -13,7 +14,8 @@
         "pk": 2,
         "fields": {
             "subclassAtLevel": 3,
-            "name": "Barbarian"
+            "name": "Barbarian",
+            "features": [3,4,5]
         }
     },
     {
