@@ -22,7 +22,7 @@
                 <div class="ms-auto align-content-center">
                     <label class="whiteText" style="font-weight:bold"
                            for="classLvl-{{ classLvl.classLvlId }}">Level</label>
-                    <select class="classLvl-select" id="classLvl-{{ classLvl.classLvlId }}"
+                    <select class="classLvl-select pb-1" id="classLvl-{{ classLvl.classLvlId }}"
                             data-classlvlid="{{ classLvl.classLvlId }}" style="width:50px">
                         {% for i in 21|subtract:character.totalLevel|add:classLvl.level|custom_range %}
                             <option value="{{ i }}" {% if i == classLvl.level %} selected {% endif %} >{{ i }}</option>

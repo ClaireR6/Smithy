@@ -13,7 +13,7 @@
         </h3>
         <div id="accordion">
             {% for trait in character.race.traits.all %}
-                <div class="card bg-transparent border-0">
+                <div class="card bg-transparent border-0 my-2">
                     <div class="card-header border-0"
                          id="heading{{ trait.traitId }}">
                         <button class="d-flex flex-row p-0 btn btn-lg w-100 whiteText collapseBtnWht text-start border-0"
@@ -22,7 +22,7 @@
                                 aria-expanded="true"
                                 aria-controls="collapse{{ trait.traitId }}"
                                 onclick="toggleArrow({{ trait.traitId }})">
-                            <p class="me-auto whiteText"> {{ trait.name }} </p>
+                            <p class="me-auto mb-0 whiteText"> {{ trait.name }} </p>
                             <i id="icon{{ trait.traitId }}"
                                class="fa whiteText ms-auto fa-caret-down" aria-hidden="true"></i>
                         </button>
