@@ -57,23 +57,12 @@ function toggleArrow(id) {
     $("#icon" + id).toggleClass("fa-caret-right")
 }
 
-function addClass(classId, characterId) {
-    $.ajax({
-            type: "POST",
-            url: "/dbClass/",
-            data: {action: "add", class_id: classId, character_id: characterId},
-            success: function(){window.location.reload()},
-            error: reporterr
-        }
-    )
-}
-
 // Fills class information on page
 function fill(data) {
     if (data) {
         let infoHtml = "";
         infoHtml +=
-            "<h3 class=\"yellow d-flex flex-row h-100 align-items-center\"> " + data.classInfo.name + "<button class=\'btn btn-success ms-auto\' onclick=\'addClass(" + data.classInfo.classId + ", "+characterId+")\'> Add Class </button> </h3>\n" +
+            "<h3 class=\"yellow d-flex flex-row h-100 align-items-center\"> " + data.classInfo.name + "<button class=\'btn btn-success ms-auto\' onclick=\'addClass(" + data.classInfo.classId + ")\'> Add Class </button> </h3>\n" +
             "<hr class=\"yellow my-3 border-3 opacity-100\">";
 
         const feats = data.features
@@ -88,7 +77,7 @@ function fill(data) {
                 "<div class=\"card bg-transparent border-0\">" +
                 "<div class=\"card-header border-0\" id=\"heading" + data.classInfo.classId + "" + feat.featId + "\">" +
                 // "<h5 class=\"mb-0\">" +
-                "<button class=\"d-flex flex-row p-0 btn btn-lg w-100 yellow collapseBtn text-start border-0\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse" + data.classInfo.classId + "" + feat.featId + "\"" +
+                "<button class=\"d-flex flex-row p-0 btn btn-lg w-100 yellow collapseBtnYlw text-start border-0\" data-bs-toggle=\"collapse\" data-bs-target=\"#collapse" + data.classInfo.classId + "" + feat.featId + "\"" +
                 "aria-expanded=\"true\" aria-controls=\"collapse" + data.classInfo.classId + "" + feat.featId + "\" onclick=\'toggleArrow(" + data.classInfo.classId + "" + feat.featId + ")\'>" +
                 "<p class=\'me-auto\'> " + feat.name + " </p>" +
                 "<i id=\"icon" + data.classInfo.classId + "" + feat.featId + "\" class=\"fa fa-caret-down yellow ms-auto\"></i>" +
@@ -106,18 +95,31 @@ function fill(data) {
         })
         infoHtml += "</div>";
         $("#classInfo").html(infoHtml)
-    }
-    else{
+    } else {
         $("#classInfo").html("")
+
     }
 
 }
 
-function reporterr(data) {
-    console.log(data.error)
+function reporterr(error) {
+    console.error('Error:', error);
+    let errorMessage = typeof error.message === 'object' ? Object.values(error.message).join(" ") : error.message;
+    makeToast(errorMessage, 400);
 }
 
-
+function addClass(classId) {
+    $.ajax({
+            type: "POST",
+            url: "/dbClass/",
+            data: {action: "add", class_id: classId, character_id: characterId},
+            success: function () {
+                window.location.reload()
+            },
+            error: reporterr
+        }
+    )
+}
 $(function () //ready function
 {
     const csrftoken = getCookie('csrftoken');
@@ -137,7 +139,7 @@ $(function () //ready function
             $.ajax({
                     type: "POST",
                     url: "/dbClass/",
-                    data: {action: "get", class_id: charClassId},
+                    data: {action: "get", class_id: charClassId, character_id: characterId},
                     success: fill,
                     error: reporterr
                 }
@@ -145,6 +147,35 @@ $(function () //ready function
         } else {
             $("#classInfo").html("")
         }
+    });
+
+    $("#classLvlContainer").on('change', '.classLvl-select', function () {
+        const classLvlId = $(this).data("classlvlid")
+        const lvl = $(this).val()
+        $.ajax({
+                type: "POST",
+                url: "/dbClass/",
+                data: {action: "level", character_id: characterId, classlvl_id: classLvlId, level: lvl},
+                success: function () {
+                    window.location.reload()
+                },
+                error: reporterr
+            }
+        )
+    });
+
+    $(".remove-class").click(function () {
+        const classLvlId = $(this).data("classlvlid")
+        $.ajax({
+                type: "POST",
+                url: "/dbClass/",
+                data: {action: "remove", character_id: characterId, classlvl_id: classLvlId},
+                success: function () {
+                    window.location.reload()
+                },
+                error: reporterr
+            }
+        )
     });
 });
 

@@ -16,13 +16,13 @@
 <body>
 <div class="col-12">
     <div class="align-items-center d-flex flex-nowrap mx-auto position-fixed py-3 row w-100" id="header">
-        <div class="col-md-2 col-lg-1 col-sm-2 col-1 justify-content-left align-items-center me-1 d-flex">
+        <div class="col-md-2 col-lg-1 col-sm-2 col-1 justify-content-left align-items-center me-1 me-md-2 me-lg-3 d-flex">
             <a href="/" class="SmthyLink align-items-center d-flex flex-nowrap">
                 <img class="me-2" style="max-width: 25px;" src="{% static 'icons/favicon.ico' %}"> <span
                     class="d-none d-sm-flex">Smithy</span>
             </a>
         </div>
-        <div class="col-1 dropdown d-lg-none me-sm-0  me-auto">
+        <div class="col-auto dropdown d-lg-none me-1">
             <button class="btn" id="dropdownBtn" type="button"
                     data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 <i class="fa fa-lg fa-bars mx-auto w-100 h-100" style="color:white"></i>
@@ -55,7 +55,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-6 d-flex flex-row">
+        <div class="col-lg-1 col-md-1 col-auto d-flex flex-row">
             {% if user.is_authenticated %}
                 <a href="/signout"
                    class="me-auto hover btn btn-dark p-2 mx-3 d-inline text-center me-1 orangeBtn text-nowrap"
